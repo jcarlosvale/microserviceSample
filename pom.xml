@@ -16,6 +16,7 @@
 	<properties>
 		<java.version>11</java.version>
 		<docker.image.prefix>study</docker.image.prefix>
+		<docker.buildpack.prefix>buildpack</docker.buildpack.prefix>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -49,6 +50,9 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
+					<image>
+						<name>${docker.buildpack.prefix}/${project.artifactId}:latest</name>
+					</image>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
